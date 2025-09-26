@@ -48,7 +48,6 @@ jobs:
             html-minifier-terser \
               --collapse-whitespace \
               --remove-comments \
-              --conservative-collapse false \
               "$file" -o "$out"
           done
 

@@ -55,7 +55,7 @@ jobs:
           find . -type f -name '*.css' ! -path './dist/*' ! -path './.github/*' | while read file; do
             out="dist/${file#./}"
             mkdir -p "$(dirname "$out")"
-            cleancss --level 2 --format breakWith=none -o "$out" "$file"
+            cleancss --format breakWith=none -o "$out" "$file"
           done
 
           echo "Ofuscando JS..."

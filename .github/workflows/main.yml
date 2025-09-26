@@ -32,7 +32,7 @@ jobs:
       - name: Minify JS, CSS, and HTML
         run: |
           mkdir dist
-          cp -r * dist/
+          rsync -av --exclude dist --exclude .git --exclude .github ./ dist/
           # Minificar todos los JS
           find dist -name '*.js' -exec terser '{}' -c -m -o '{}' \;
           # Minificar todos los CSS

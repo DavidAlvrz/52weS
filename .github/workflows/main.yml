@@ -1,50 +1,66 @@
-name: Build, Obfuscate and Deploy to GitHub Pages
+name: Build (minify/obfuscate) and Deploy to GitHub Pages (root)
 
 on:
   push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main  # o la rama que uses como principal
 
 jobs:
-  build-obfuscate-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
 
-      - name: Install minifiers
+      # Instalamos herramientas solo en el runner
+      - name: Install build tools
         run: |
-          npm install -g terser csso-cli html-minifier
+          npm install -g html-minifier-terser clean-css-cli javascript-obfuscator
 
-      - name: Minify JS, CSS, and HTML
+      - name: Build (minify HTML & CSS, obfuscate JS, copy static)
         run: |
-          mkdir dist
-          rsync -av --exclude dist --exclude .git --exclude .github ./ dist/
-          # Minificar todos los JS
-          find dist -name '*.js' -exec terser '{}' -c -m -o '{}' \;
-          # Minificar todos los CSS
-          find dist -name '*.css' -exec csso '{}' -o '{}' \;
-          # Minificar todos los HTML
-          find dist -name '*.html' -exec html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --minify-js --minify-css -o '{}' '{}' \;
+          # Crear carpeta dist
+          rm -rf dist
+          mkdir -p dist
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'dist'
+          # 0. Copiar todos los archivos manteniendo estructura excepto html/css/js
+          rsync -av --exclude='.git/' --exclude='dist/' --exclude='.github/' \
+                   --exclude='*.html' --exclude='*.css' --exclude='*.js' ./ dist/
+
+          # 1. Minificar HTML en todo el repo manteniendo estructura
+          find . -type f -name '*.html' ! -path './dist/*' ! -path './.github/*' | while read file; do
+            out="dist/${file#./}"
+            mkdir -p "$(dirname "$out")"
+            html-minifier-terser \
+              --collapse-whitespace \
+              --remove-comments \
+              --minify-css true \
+              "$file" -o "$out"
+          done
+
+          # 2. Minificar CSS en todo el repo manteniendo estructura
+          find . -type f -name '*.css' ! -path './dist/*' ! -path './.github/*' | while read file; do
+            out="dist/${file#./}"
+            mkdir -p "$(dirname "$out")"
+            cleancss -o "$out" "$file"
+          done
+
+          # 3. Ofuscar JS en todo el repo manteniendo estructura
+          javascript-obfuscator . --output dist \
+            --compact true \
+            --self-defending true \
+            --control-flow-flattening true \
+            --exclude dist \
+            --exclude .github
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

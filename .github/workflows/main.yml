@@ -1,0 +1,50 @@
+name: Build, Obfuscate and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-obfuscate-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install minifiers
+        run: |
+          npm install -g terser csso-cli html-minifier
+
+      - name: Minify JS, CSS, and HTML
+        run: |
+          mkdir dist
+          cp -r * dist/
+          # Minificar todos los JS
+          find dist -name '*.js' -exec terser '{}' -c -m -o '{}' \;
+          # Minificar todos los CSS
+          find dist -name '*.css' -exec csso '{}' -o '{}' \;
+          # Minificar todos los HTML
+          find dist -name '*.html' -exec html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --minify-js --minify-css -o '{}' '{}' \;
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

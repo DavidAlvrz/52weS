@@ -3,7 +3,10 @@ name: Build (minify/obfuscate) and Deploy to GitHub Pages (root)
 on:
   push:
     branches:
-      - main  # o la rama que uses como principal
+      - main  # o la rama principal que uses
+
+permissions:        # 👈 importante para que el bot pueda hacer push
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -25,15 +28,17 @@ jobs:
 
       - name: Build (minify HTML & CSS, obfuscate JS, copy static)
         run: |
+          set -e  # 👈 si algo falla, aborta el job
+
           # Crear carpeta dist
           rm -rf dist
           mkdir -p dist
 
-          # 0. Copiar todos los archivos manteniendo estructura excepto html/css/js
+          echo "Copiando archivos estáticos (excepto html/css/js)..."
           rsync -av --exclude='.git/' --exclude='dist/' --exclude='.github/' \
                    --exclude='*.html' --exclude='*.css' --exclude='*.js' ./ dist/
 
-          # 1. Minificar HTML en todo el repo manteniendo estructura
+          echo "Minificando HTML..."
           find . -type f -name '*.html' ! -path './dist/*' ! -path './.github/*' | while read file; do
             out="dist/${file#./}"
             mkdir -p "$(dirname "$out")"
@@ -44,20 +49,26 @@ jobs:
               "$file" -o "$out"
           done
 
-          # 2. Minificar CSS en todo el repo manteniendo estructura
+          echo "Minificando CSS..."
           find . -type f -name '*.css' ! -path './dist/*' ! -path './.github/*' | while read file; do
             out="dist/${file#./}"
             mkdir -p "$(dirname "$out")"
             cleancss -o "$out" "$file"
           done
 
-          # 3. Ofuscar JS en todo el repo manteniendo estructura
+          echo "Ofuscando JS..."
           javascript-obfuscator . --output dist \
             --compact true \
             --self-defending true \
             --control-flow-flattening true \
             --exclude dist \
             --exclude .github
+
+      # 👇 Paso para debug
+      - name: Debug dist contents
+        run: |
+          echo "Mostrando contenido de dist/"
+          ls -R dist || echo "No se encontró la carpeta dist"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -3,10 +3,10 @@ name: Build (minify/obfuscate) and Deploy to GitHub Pages (root)
 on:
   push:
     branches:
-      - main  # o la rama principal que uses
+      - main  # tu rama principal
 
-permissions:        # 👈 importante para que el bot pueda hacer push
-  contents: write
+permissions:
+  contents: write  # permite al bot crear y subir gh-pages
 
 jobs:
   build-and-deploy:
@@ -21,14 +21,13 @@ jobs:
         with:
           node-version: '20'
 
-      # Instalamos herramientas solo en el runner
       - name: Install build tools
         run: |
           npm install -g html-minifier-terser clean-css-cli javascript-obfuscator
 
       - name: Build (minify HTML & CSS, obfuscate JS, copy static)
         run: |
-          set -e  # 👈 si algo falla, aborta el job
+          set -e  # falla si algo sale mal
 
           # Crear carpeta dist
           rm -rf dist
@@ -38,7 +37,7 @@ jobs:
           rsync -av --exclude='.git/' --exclude='dist/' --exclude='.github/' \
                    --exclude='*.html' --exclude='*.css' --exclude='*.js' ./ dist/
 
-          echo "Minificando HTML..."
+          echo "Minificando HTML (una línea)..."
           find . -type f -name '*.html' ! -path './dist/*' ! -path './.github/*' | while read file; do
             out="dist/${file#./}"
             mkdir -p "$(dirname "$out")"
@@ -46,14 +45,16 @@ jobs:
               --collapse-whitespace \
               --remove-comments \
               --minify-css true \
+              --minify-js true \
+              --conservative-collapse false \
               "$file" -o "$out"
           done
 
-          echo "Minificando CSS..."
+          echo "Minificando CSS (una línea)..."
           find . -type f -name '*.css' ! -path './dist/*' ! -path './.github/*' | while read file; do
             out="dist/${file#./}"
             mkdir -p "$(dirname "$out")"
-            cleancss -o "$out" "$file"
+            cleancss --level 2 --format breakWith=none -o "$out" "$file"
           done
 
           echo "Ofuscando JS..."
@@ -64,7 +65,6 @@ jobs:
             --exclude dist \
             --exclude .github
 
-      # 👇 Paso para debug
       - name: Debug dist contents
         run: |
           echo "Mostrando contenido de dist/"

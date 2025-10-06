@@ -3,21 +3,3 @@
 /* Estilos generales del proyecto MotoGP Desktop */
 
 /* styles.css */
-
-body {
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  color: darkblue;
-  text-align: center;
-  margin-top: 50px;
-}
-
-p {
-  color: #333;
-  font-size: 16px;
-  max-width: 600px;
-  margin: 20px auto;
-}

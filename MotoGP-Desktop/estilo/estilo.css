@@ -12,10 +12,28 @@ body {
 /*001*/
 header {
     background-color: #BADDDE;
-    color:black;
+    color: black;
+    padding: 1em;
+}
+
+/*002*/
+/* Produce advertencia: "Hay un color de primer plano establecido y no hay color de fondo" debido a que el color de fondo se hereda del elemento body */
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+/*012*/
+header a:hover{
+    text-decoration: underline;
 }
 
 /*010*/
 .active {
     font-weight: bold;
+}
+
+/*012*/
+body>p:first-of-type {
+    font-size: 0.85em;
 }

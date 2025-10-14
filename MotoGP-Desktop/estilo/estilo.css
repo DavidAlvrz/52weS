@@ -2,4 +2,20 @@
 
 /* Estilos generales del proyecto MotoGP Desktop */
 
-/* styles.css */
+/*001*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+    color: black;
+}
+
+/*001*/
+header {
+    background-color: #BADDDE;
+    color:black;
+}
+
+/*010*/
+.active {
+    font-weight: bold;
+}

@@ -1,0 +1,43 @@
+/* David Álvarez Menéndez UO288705 */
+
+/* Estilos para esquemas de posicionamiento del proyecto MotoGP Desktop */
+
+/*001*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 465px) and (max-width: 799px) {
+
+    /*001*/
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /*002*/
+    header nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /*012*/
+    body>p:first-of-type {
+        display: none;
+    }
+
+    /*001*/
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    /*001*/
+    audio {
+        width: 100%;
+    }
+
+}

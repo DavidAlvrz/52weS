@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE circuito SYSTEM "circuito.dtd">
+<circuito>
+    <nombre>Circuit Ricardo Tormo</nombre>
+
+    <medidas>
+        <longitud unidad="m">4005</longitud>
+        <anchura unidad="m">10</anchura>
+    </medidas>
+
+    <fecha anio="2025">2025-09-16</fecha>
+    <hora zona_horaria="Europe/Madrid" formato="HH:MM">14:00</hora>
+    <vueltas unidad="vueltas">27</vueltas>
+
+    <localidad>Cheste</localidad>
+    <pais>España</pais>
+    <patrocinador>Motul</patrocinador>
+
+    <referencias>
+        <referencia tipo="web" enlace="https://www.circuitricardotormo.com/"> Web oficial</referencia>
+        <referencia tipo="libro" enlace="https://entradas.circuitvalencia.com/circuitvalencia/events/referencia"> Compra de entradas </referencia>
+        <referencia tipo="documento" enlace="https://es.wikipedia.org/wiki/Circuito_Ricardo_Tormo"> Entrada wikipedia </referencia>
+    </referencias>
+
+    <galeriaFotos>
+        <foto archivo="Panorama.jpg" descripcion="Circuito">../multimedia/circuito.png</foto>
+    </galeriaFotos>
+
+    <galeriaVideos>
+        <video archivo="TODO.mp4" duracion="TODO">../multimedia/circuito.mp4</video>
+    </galeriaVideos>
+
+    <puntoOrigen>
+        <longitudCoord unidad="deg">-0.7</longitudCoord>
+        <latitudCoord unidad="deg">39.4</latitudCoord>
+        <altitudCoord unidad="m">75</altitudCoord>
+    </puntoOrigen>
+
+    <tramos>
+        <tramo>
+            <distancia unidad="m">350</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.7</longitudCoord>
+                <latitudCoord unidad="deg">39.4</latitudCoord>
+                <altitudCoord unidad="m">76</altitudCoord>
+            </puntoFinal>
+            <sector numero="1">Sector 1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">480</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.7</longitudCoord>
+                <latitudCoord unidad="deg">39.4</latitudCoord>
+                <altitudCoord unidad="m">77</altitudCoord>
+            </puntoFinal>
+            <sector numero="2">Sector 2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">480</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.7</longitudCoord>
+                <latitudCoord unidad="deg">34.24</latitudCoord>
+                <altitudCoord unidad="m">73</altitudCoord>
+            </puntoFinal>
+            <sector numero="2">Sector 2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">480</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.7</longitudCoord>
+                <latitudCoord unidad="deg">32.4</latitudCoord>
+                <altitudCoord unidad="m">72</altitudCoord>
+            </puntoFinal>
+            <sector numero="2">Sector 2</sector>
+        </tramo>
+    </tramos>
+
+    <vencedor>
+        <nombreVencedor>TODO</nombreVencedor>
+        <tiempo unidad="mm:ss.ms">TODO</tiempo>
+    </vencedor>
+
+    <mundialClasificacion>
+        <piloto posicion="1" equipo="TODO" puntos="TODO">TODO - Piloto 1</piloto>
+        <piloto posicion="2" equipo="TODO" puntos="TODO">TODO - Piloto 2</piloto>
+        <piloto posicion="3" equipo="TODO" puntos="TODO">TODO - Piloto 3</piloto>
+    </mundialClasificacion>
+</circuito>

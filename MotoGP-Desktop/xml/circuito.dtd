@@ -1,0 +1,94 @@
+<!ELEMENT circuito (
+    nombre,
+    medidas,
+    fecha,
+    hora,
+    vueltas,
+    localidad,
+    pais,
+    patrocinador,
+    referencias,
+    galeriaFotos,
+    galeriaVideos,
+    puntoOrigen,
+    tramos,
+    vencedor,
+    mundialClasificacion
+)>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT medidas (longitud, anchura)>
+<!ELEMENT longitud (#PCDATA)>
+<!ATTLIST longitud unidad CDATA #REQUIRED>
+
+<!ELEMENT anchura (#PCDATA)>
+<!ATTLIST anchura unidad CDATA #REQUIRED>
+
+<!ELEMENT fecha (#PCDATA)>
+<!ATTLIST fecha anio CDATA #REQUIRED>
+
+<!ELEMENT hora (#PCDATA)>
+<!ATTLIST hora
+    zona_horaria CDATA #IMPLIED
+    formato CDATA #IMPLIED>
+
+<!ELEMENT vueltas (#PCDATA)>
+<!ATTLIST vueltas unidad CDATA #IMPLIED>
+
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+
+<!ELEMENT patrocinador (#PCDATA)>
+
+<!ELEMENT referencias (referencia+)>
+<!ELEMENT referencia (#PCDATA)>
+<!ATTLIST referencia
+    tipo CDATA #IMPLIED
+    enlace CDATA #IMPLIED>
+
+<!ELEMENT galeriaFotos (foto+)>
+<!ELEMENT foto (#PCDATA)>
+<!ATTLIST foto
+    archivo CDATA #REQUIRED
+    descripcion CDATA #IMPLIED>
+
+    <!ELEMENT galeriaVideos (video+)>
+<!ELEMENT video (#PCDATA)>
+<!ATTLIST video
+    archivo CDATA #REQUIRED
+    duracion CDATA #IMPLIED
+    descripcion CDATA #IMPLIED>
+
+<!ELEMENT puntoOrigen (longitudCoord, latitudCoord, altitudCoord)>
+<!ELEMENT longitudCoord (#PCDATA)>
+<!ATTLIST longitudCoord unidad CDATA #IMPLIED>
+
+<!ELEMENT latitudCoord (#PCDATA)>
+<!ATTLIST latitudCoord unidad CDATA #IMPLIED>
+
+<!ELEMENT altitudCoord (#PCDATA)>
+<!ATTLIST altitudCoord unidad CDATA #IMPLIED>
+
+<!ELEMENT tramos (tramo+)>
+<!ELEMENT tramo (distancia, puntoFinal, sector)>
+
+<!ELEMENT distancia (#PCDATA)>
+<!ATTLIST distancia unidad CDATA #REQUIRED>
+
+<!ELEMENT puntoFinal (longitudCoord, latitudCoord, altitudCoord)>
+
+<!ELEMENT sector (#PCDATA)>
+<!ATTLIST sector numero CDATA #REQUIRED>
+
+<!ELEMENT vencedor (nombreVencedor, tiempo)>
+<!ELEMENT nombreVencedor (#PCDATA)>
+<!ELEMENT tiempo (#PCDATA)>
+<!ATTLIST tiempo unidad CDATA #IMPLIED>
+
+<!ELEMENT mundialClasificacion (piloto, piloto, piloto)>
+<!ELEMENT piloto (#PCDATA)>
+<!ATTLIST piloto
+    posicion CDATA #REQUIRED
+    equipo CDATA #IMPLIED
+    puntos CDATA #IMPLIED>

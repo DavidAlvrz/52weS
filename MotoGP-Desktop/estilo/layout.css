@@ -9,7 +9,7 @@ header {
     align-items: center;
 }
 
-@media (max-width: 465px) and (max-width: 799px) {
+@media (min-width: 320px) and (max-width: 799px) {
 
     /*001*/
     header {

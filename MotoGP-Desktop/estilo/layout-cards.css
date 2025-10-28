@@ -1,0 +1,27 @@
+
+/* Especificidad 001*/
+main {
+display: grid;
+grid-template-columns: repeat(4,1fr);
+}
+
+/* Especificidad 002*/
+main h2 {
+grid-column: span 4;
+}
+
+
+@media (min-width: 320px) and (max-width: 799px) {
+
+    /* Especificidad 001*/
+    main {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    /* Ajuste: el h2 sólo debe abarcar 2 columnas en este rango */
+    main h2 {
+        grid-column: span 2;
+    }
+
+}

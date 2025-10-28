@@ -1,0 +1,31 @@
+Modificaciones de tipos
+    por ejemplo
+        longitud: xs:string xs:positiveInteger
+        fecha carrera: xs:string -> xs:date
+        duracion: xs-string -> xs:duration
+        anchura, longitud, latitud  etc
+
+Cambios en los rangos
+    cuando en el dtd se supone que algo era "de 1 a 3" pero no se pudo hacer 
+    debido a las limitaciones de dtd
+    por ejemplo
+        videos: de 1 a 3. Ahora mismo está de 1 a inf (+)
+
+Añadir restricciones
+    Solo se puede aplicar a tipos simples ??
+    Por ejemplo
+        latitud debe pertenecer a (-90,90)
+        longitud debe pertenecer a (-180,180)
+        altitud debe er positiva respecto al mar. POner un maximo logico tambien
+        anchura,longitud etc
+
+Otros Cambios
+    Cambiar la codificación a utf8
+    Espacio de nombres http://www.uniovi.es
+    
+
+Nuevos tipos
+
+    anchura: positiveInteger
+    longitud: positiveInteger
+    fecha: date

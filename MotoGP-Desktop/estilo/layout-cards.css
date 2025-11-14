@@ -1,13 +1,15 @@
-
 /* Especificidad 001*/
 main {
-display: grid;
-grid-template-columns: repeat(4,1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
 }
 
 /* Especificidad 002*/
-main h2 {
-grid-column: span 4;
+main h2,
+main p {
+    grid-column: span 4;
+    text-align: center;
 }
 
 
@@ -16,7 +18,7 @@ grid-column: span 4;
     /* Especificidad 001*/
     main {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     /* Ajuste: el h2 sólo debe abarcar 2 columnas en este rango */

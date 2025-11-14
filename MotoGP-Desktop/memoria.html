@@ -17,16 +17,11 @@
         <link rel="stylesheet" type="text/css" href="estilo/cards.css" />
         <link rel="stylesheet" type="text/css" href="estilo/layout-cards.css" />
         <script src="js/memoria.js"></script>
-
+        <script src="js/cronometro.js"></script>
 
     </head>
 
     <body>
-
-        <script>
-            const memoria = new Memoria();
-        </script>
-
         <header>
             <h1> <a href="index.html">MotoGP Desktop </a></h1>
             <nav>
@@ -58,6 +53,7 @@
 
         <main>
             <h2> Juego de memoria con cartas </h2>
+            <p> 00:00.0</p>
 
             <article onclick="memoria.voltearCarta(this)">
                 <h3>Memory Card</h3>
@@ -119,6 +115,10 @@
                 <img src="multimedia/logos/motogp.svg" alt="Logo-MotoGP" />
             </article>
         </main>
+
+        <script>
+            const memoria = new Memoria();
+        </script>
     </body>
 
 </html>

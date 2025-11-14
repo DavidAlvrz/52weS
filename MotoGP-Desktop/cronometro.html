@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<html lang="es">
+
+    <head>
+        <!-- Datos que describen el documento -->
+        <meta charset="UTF-8" />
+        <title>MotoGP - Juegos</title>
+        <meta name="author" content="David Álvarez Menéndez - UO288705" />
+        <meta name="description" content="Cronómetro" />
+        <meta name="keywords"
+            content="MotoGP, motocicletas, carreras, deportes, velocidad" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" href="multimedia/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+        <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+        <script src="js/cronometro.js"></script>
+
+    </head>
+
+    <body>
+
+        <script>
+            const cronometro = new Cronometro();
+        </script>
+
+        <header>
+            <h1> <a href="index.html">MotoGP Desktop </a></h1>
+            <nav>
+                <a href="index.html" title="Página de inicio">Inicio</a>
+
+                <a href="piloto.html"
+                    title="Información sobre el piloto MotoGP">Piloto</a>
+
+                <a href="circuito.html"
+                    title="Información sobre el circuitos MotoGP">Circuito</a>
+
+                <a href="meteorologia.html"
+                    title="Información sobre meteorología">Meteorología</a>
+
+                <a href="clasificaciones.html"
+                    title="Información sobre la clasificación MotoGP">Clasificaciones</a>
+
+                <a href="juegos.html"
+                    title="Sección de juegos de MotoGP Desktop"
+                    class="active">Juegos</a>
+
+                <a href="ayuda.html"
+                    title="Sección de ayuda de MotoGP Desktop">Ayuda</a>
+            </nav>
+        </header>
+
+        <p> Estás en <a href="index.html">Inicio</a> - <a href="juegos.html">Juegos</a> - <strong>Cronómetro</strong></p>
+
+        <h2> Cronómetro </h2>
+
+        <main>
+            <p> 00:00.0</p>
+
+            <button onclick="cronometro.arrancar()">Iniciar</button>
+            <button onclick="cronometro.parar()">Parar</button>
+            <button onclick="cronometro.reiniciar()">Reiniciar</button>
+
+        </main>
+    </body>
+
+</html>

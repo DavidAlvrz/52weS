@@ -40,4 +40,9 @@ header {
         width: 100%;
     }
 
+    /*003*/
+    article h2 + img{
+        width: 100%;
+    }
+
 }

@@ -2,9 +2,16 @@ class Memoria {
     constructor() {
         this.reiniciarAtributos();
         this.barajarCartas();
+        this.setupListeners();
 
         this.cronometro = new Cronometro();
         this.cronometro.arrancar();
+    }
+
+    setupListeners() {
+        document.querySelectorAll("article").forEach(carta => {
+            carta.addEventListener("click", () => this.voltearCarta(carta));
+        });
     }
 
     reiniciarAtributos() {

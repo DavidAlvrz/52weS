@@ -56,12 +56,9 @@
             <script>
                 var ciudad = new Ciudad("Valencia", "España", "valenciano");
                 ciudad.poblarAtributos();
-                document.write("<h3>Información de la ciudad</h3>");
-                document.write("<p>Nombre: " + ciudad.getNombre() + "</p>");
-                document.write("<p>País: " + ciudad.getPais() + "</p>");
-                ciudad.writeCoordenadas();
-                document.write(ciudad.getInfoSecundaria());
+                ciudad.mostrarInfo();
             </script>
+
         </main>
     </body>
 

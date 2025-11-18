@@ -4,6 +4,12 @@ class Cronometro {
         this.actualizar = this.actualizar.bind(this);
     }
 
+    setupBotones() {
+                document.querySelector('main button:nth-of-type(1)').addEventListener('click', () => this.arrancar());
+        document.querySelector('main button:nth-of-type(2)').addEventListener('click', () => this.parar());
+        document.querySelector('main button:nth-of-type(3)').addEventListener('click', () => this.reiniciar());
+    }
+
     arrancar() {
         try {
             this.inicio = Temporal.Now.instant();

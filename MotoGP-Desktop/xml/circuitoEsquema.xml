@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<circuito xmlns="http://www.uniovi.es"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.uniovi.es circuito.xsd">
+
+    <nombre>Circuit Ricardo Tormo</nombre>
+
+    <medidas>
+        <longitud unidad="m">4005</longitud>
+        <anchura unidad="m">10</anchura>
+    </medidas>
+
+    <fecha anio="2025">2025-09-16</fecha>
+    <hora zona_horaria="Europe/Madrid" formato="HH:MM">14:00:00</hora>
+    <vueltas unidad="vueltas">27</vueltas>
+
+    <localidad>Cheste</localidad>
+    <pais>España</pais>
+    <patrocinador>Motul</patrocinador>
+
+    <referencias>
+        <referencia tipo="web" enlace="https://www.circuitricardotormo.com/"> Web oficial</referencia>
+        <referencia tipo="libro"
+            enlace="https://entradas.circuitvalencia.com/circuitvalencia/events/referencia"> Compra
+            de entradas </referencia>
+        <referencia tipo="documento" enlace="https://es.wikipedia.org/wiki/Circuito_Ricardo_Tormo">
+            Entrada wikipedia </referencia>
+    </referencias>
+
+    <galeriaFotos>
+        <foto archivo="Panorama.jpg" descripcion="Circuito">../multimedia/circuito.png</foto>
+    </galeriaFotos>
+
+    <galeriaVideos>
+        <video archivo="TODO.mp4" duracion="TODO">../multimedia/circuito.mp4</video>
+    </galeriaVideos>
+
+    <puntoOrigen>
+        <longitudCoord unidad="deg">-0.7</longitudCoord>
+        <latitudCoord unidad="deg">39.4</latitudCoord>
+        <altitudCoord unidad="m">75</altitudCoord>
+    </puntoOrigen>
+
+    <tramos>
+
+        <tramo>
+            <distancia unidad="m">490</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.626365237</longitudCoord>
+                <latitudCoord unidad="deg">39.486056226</latitudCoord>
+                <altitudCoord unidad="m">146.67</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">44</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.626066543</longitudCoord>
+                <latitudCoord unidad="deg">39.486356074</latitudCoord>
+                <altitudCoord unidad="m">146.22</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">43</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.626049043</longitudCoord>
+                <latitudCoord unidad="deg">39.486742136</latitudCoord>
+                <altitudCoord unidad="m">146.26</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">316</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.627457653</longitudCoord>
+                <latitudCoord unidad="deg">39.489370922</latitudCoord>
+                <altitudCoord unidad="m">151.54</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">38</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.627788446</longitudCoord>
+                <latitudCoord unidad="deg">39.489456029</latitudCoord>
+                <altitudCoord unidad="m">151.79</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">32</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.628034771</longitudCoord>
+                <latitudCoord unidad="deg">39.489293243</latitudCoord>
+                <altitudCoord unidad="m">152.1</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">142</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.628265216</longitudCoord>
+                <latitudCoord unidad="deg">39.488023206</latitudCoord>
+                <altitudCoord unidad="m">151.17</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">161</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.627106454</longitudCoord>
+                <latitudCoord unidad="deg">39.486828170</latitudCoord>
+                <altitudCoord unidad="m">148.4</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">26</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.627231750</longitudCoord>
+                <latitudCoord unidad="deg">39.486619888</latitudCoord>
+                <altitudCoord unidad="m">148.5</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">118</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.628388533</longitudCoord>
+                <latitudCoord unidad="deg">39.486017478</latitudCoord>
+                <altitudCoord unidad="m">149.0</altitudCoord>
+            </puntoFinal>
+            <sector>1</sector>
+        </tramo>
+
+        <!-- SECTOR 2 -->
+
+        <tramo>
+            <distancia unidad="m">53</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.628899391</longitudCoord>
+                <latitudCoord unidad="deg">39.486116281</latitudCoord>
+                <altitudCoord unidad="m">149.7</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">39</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.629109715</longitudCoord>
+                <latitudCoord unidad="deg">39.486437318</latitudCoord>
+                <altitudCoord unidad="m">150.25</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">211</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.629147765</longitudCoord>
+                <latitudCoord unidad="deg">39.488336723</latitudCoord>
+                <altitudCoord unidad="m">154.97</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">45</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.629489364</longitudCoord>
+                <latitudCoord unidad="deg">39.488553665</latitudCoord>
+                <altitudCoord unidad="m">156.3</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">40</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.629833002</longitudCoord>
+                <latitudCoord unidad="deg">39.488481863</latitudCoord>
+                <altitudCoord unidad="m">156.75</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">315</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.632700867</longitudCoord>
+                <latitudCoord unidad="deg">39.486929289</latitudCoord>
+                <altitudCoord unidad="m">162.33</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">179</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.633702779</longitudCoord>
+                <latitudCoord unidad="deg">39.485504600</latitudCoord>
+                <altitudCoord unidad="m">162.8</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">47</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.633450342</longitudCoord>
+                <latitudCoord unidad="deg">39.485131705</latitudCoord>
+                <altitudCoord unidad="m">161.61</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">58</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.632935780</longitudCoord>
+                <latitudCoord unidad="deg">39.485061269</latitudCoord>
+                <altitudCoord unidad="m">159.7</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">132</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.631635029</longitudCoord>
+                <latitudCoord unidad="deg">39.485795628</latitudCoord>
+                <altitudCoord unidad="m">156.7</altitudCoord>
+            </puntoFinal>
+            <sector>2</sector>
+        </tramo>
+
+        <!-- SECTOR 3 -->
+
+        <tramo>
+            <distancia unidad="m">108</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.631361181</longitudCoord>
+                <latitudCoord unidad="deg">39.486729825</latitudCoord>
+                <altitudCoord unidad="m">156.5</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">52</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.630960767</longitudCoord>
+                <latitudCoord unidad="deg">39.487064718</latitudCoord>
+                <altitudCoord unidad="m">156.3</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">61</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.630392500</longitudCoord>
+                <latitudCoord unidad="deg">39.487337073</latitudCoord>
+                <altitudCoord unidad="m">155.5</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">42</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.630039354</longitudCoord>
+                <latitudCoord unidad="deg">39.487237097</latitudCoord>
+                <altitudCoord unidad="m">155.3</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">38</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.629919816</longitudCoord>
+                <latitudCoord unidad="deg">39.486910356</latitudCoord>
+                <altitudCoord unidad="m">154.8</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">291</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.631772275</longitudCoord>
+                <latitudCoord unidad="deg">39.484571816</latitudCoord>
+                <altitudCoord unidad="m">156.3</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">132</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.633269225</longitudCoord>
+                <latitudCoord unidad="deg">39.484513619</latitudCoord>
+                <altitudCoord unidad="m">162.0</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">121</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.634383034</longitudCoord>
+                <latitudCoord unidad="deg">39.484041182</latitudCoord>
+                <altitudCoord unidad="m">165.2</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">109</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.635081613</longitudCoord>
+                <latitudCoord unidad="deg">39.483150028</latitudCoord>
+                <altitudCoord unidad="m">165.4</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">74</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.635217516</longitudCoord>
+                <latitudCoord unidad="deg">39.482479070</latitudCoord>
+                <altitudCoord unidad="m">163.2</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">82</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.635091542</longitudCoord>
+                <latitudCoord unidad="deg">39.481742084</latitudCoord>
+                <altitudCoord unidad="m">159.7</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">42</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.634716592</longitudCoord>
+                <latitudCoord unidad="deg">39.481602863</latitudCoord>
+                <altitudCoord unidad="m">158.6</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">440</distancia>
+            <puntoFinal>
+                <longitudCoord unidad="deg">-0.631068074</longitudCoord>
+                <latitudCoord unidad="deg">39.483560512</latitudCoord>
+                <altitudCoord unidad="m">153.96</altitudCoord>
+            </puntoFinal>
+            <sector>3</sector>
+        </tramo>
+
+    </tramos>
+
+    <vencedor>
+        <nombreVencedor>Marco Bezzecchi</nombreVencedor>
+        <tiempo unidad="min:seg.ms">PT40M52.46S</tiempo>
+    </vencedor>
+
+    <mundialClasificacion>
+        <piloto posicion="1" equipo="Ducati" puntos="545">Marc Márquez</piloto>
+        <piloto posicion="2" equipo="Gresini" puntos="467">Alex Márquez</piloto>
+        <piloto posicion="3" equipo="Aprilia" puntos="353">Marco Bezzecchi</piloto>
+    </mundialClasificacion>
+</circuito>

@@ -9,6 +9,18 @@ header {
     align-items: center;
 }
 
+/*001*/
+img {
+    width: 60%;
+    height: auto;
+}
+
+/*001*/
+video {
+    width: 60%;
+    height: auto;
+}
+
 @media (min-width: 320px) and (max-width: 799px) {
 
     /*001*/
@@ -35,13 +47,18 @@ header {
         height: auto;
     }
 
+    img {
+        width: 100%;
+        height: auto;
+    }
+
     /*001*/
     audio {
         width: 100%;
     }
 
     /*003*/
-    article h2 + img{
+    article h2+img {
         width: 100%;
     }
 

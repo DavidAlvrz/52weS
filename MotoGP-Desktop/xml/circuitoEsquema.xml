@@ -28,11 +28,11 @@
     </referencias>
 
     <galeriaFotos>
-        <foto archivo="Panorama.jpg" descripcion="Circuito">../multimedia/circuito.png</foto>
+        <foto archivo="../multimedia/circuito.png" descripcion="Circuito"></foto>
     </galeriaFotos>
 
     <galeriaVideos>
-        <video archivo="TODO.mp4" duracion="TODO">../multimedia/circuito.mp4</video>
+        <video archivo="../multimedia/circuito.mp4"></video>
     </galeriaVideos>
 
     <puntoOrigen>

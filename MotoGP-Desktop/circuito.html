@@ -46,11 +46,15 @@
     <main>
         <p> Seleccione un archivo HTML para cargar la información del circuito:</p>
         <input type="file" accept=".html" onchange="circuito.leerArchivoHTML(this)" />
+
+        <p> Seleccione un archivo SVG para insertarlo:</p>
+        <input type="file" accept=".svg" onchange="cargadorSVG.leerArchivoSVG(this)" />
     </main>
 
 
     <script>
         const circuito = new Circuito();
+        const cargadorSVG = new CargadorSVG();
     </script>
 </body>
 

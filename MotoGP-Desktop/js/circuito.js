@@ -101,3 +101,44 @@ class Circuito {
 
 
 }
+
+
+class CargadorSVG {
+    constructor() {
+        this.contenidoSVG = null;
+    }
+
+    leerArchivoSVG(fileInput) {
+        const archivo = fileInput.files[0];
+        if (!archivo) return;
+
+        const lector = new FileReader();
+
+        lector.onload = (evento) => {
+            this.contenidoSVG = evento.target.result;
+            this.insertarSVG();
+        };
+
+        lector.readAsText(archivo);
+    }
+
+    insertarSVG() {
+        if (!this.contenidoSVG) return;
+
+        const parser = new DOMParser();
+        const docSVG = parser.parseFromString(this.contenidoSVG, "image/svg+xml");
+        const svg = docSVG.documentElement;
+
+        svg.setAttribute("width", "100%");
+        svg.setAttribute("height", "400");
+        svg.setAttribute("viewBox", "0 0 1000 400");
+        svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+
+        const main = document.querySelector("main");
+        if (!main) return;
+
+        main.appendChild(svg);
+    }
+
+}
+

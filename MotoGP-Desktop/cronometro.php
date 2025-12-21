@@ -70,7 +70,7 @@ class Cronometro
                 title="Información sobre meteorología"
                 class="active">Meteorología</a>
 
-            <a href="clasificaciones.html"
+            <a href="clasificaciones.php"
                 title="Información sobre la clasificación MotoGP">Clasificaciones</a>
 
             <a href="juegos.html"

@@ -41,6 +41,7 @@ body main>div {
         display: flex;
         flex-direction: column;
         text-align: center;
+        gap:1em;
     }
 
     /*012*/

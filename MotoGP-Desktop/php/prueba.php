@@ -173,6 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="number" id="valoracion" name="valoracion" min="0" max="10" required><br><br>
         <label for="dispositivo">Dispositivo desde el que se realiza la prueba:</label><br>
         <select id="dispositivo" name="dispositivo" required>
+            <option value="" disabled selected>Selecciona un dispositivo</option>
             <option value="Ordenador">Ordenador</option>
             <option value="Tableta">Tableta</option>
             <option value="Teléfono">Teléfono</option>

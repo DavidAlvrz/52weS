@@ -19,8 +19,9 @@ class Ciudad {
     }
 
     getInfoSecundaria() {
-        return "<ul><li>Gentilicio: " + this.gentilicio + "</li><li>Población: " + this.poblacion + "</li></ul>";
+        return "Gentilicio: " + this.gentilicio + ", Población: " + this.poblacion;
     }
+
 
     writeCoordenadas() {
         const container = document.body;
@@ -188,7 +189,7 @@ class Ciudad {
 
         processedData.sunrise = avgSunrise;
         processedData.sunset = avgSunset;
-        
+
 
         return processedData;
     }
@@ -207,7 +208,7 @@ class Ciudad {
         const pTemperature = document.createElement("p");
         pTemperature.textContent = "Temperatura media: " + processedData.temperature_2m + " °C";
         container.appendChild(pTemperature);
-        
+
         const pApparentTemperature = document.createElement("p");
         pApparentTemperature.textContent = "Sensación térmica media: " + processedData.apparent_temperature + " °C";
         container.appendChild(pApparentTemperature);
@@ -219,11 +220,11 @@ class Ciudad {
         const pHumidity = document.createElement("p");
         pHumidity.textContent = "Humedad relativa media: " + processedData.relative_humidity_2m + " %";
         container.appendChild(pHumidity);
-        
+
         const pWindSpeed = document.createElement("p");
         pWindSpeed.textContent = "Velocidad del viento media: " + processedData.wind_speed_10m + " km/h";
         container.appendChild(pWindSpeed);
-        
+
         const pWindDirection = document.createElement("p");
         pWindDirection.textContent = "Dirección del viento media: " + processedData.wind_direction_10m + " °";
         container.appendChild(pWindDirection);

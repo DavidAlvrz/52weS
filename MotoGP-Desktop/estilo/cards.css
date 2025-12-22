@@ -30,7 +30,7 @@ article img {
     height: 100%;
     position: absolute;
     border-radius: 0.5em;
-    background: #BADDDE;
+    background: #BADDDE; /*  Produce advertencia por no tener color de primer plano establecido. Este es heredado desde el body*/
     backface-visibility: hidden;
 }
 

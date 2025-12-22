@@ -50,13 +50,12 @@ body main>div {
 
     /*001*/
     video {
-        width: 100%;
-        height: auto;
+        width: 100%; /* Produce advertencia por redefinición de ancho*/
     }
 
+    /*001*/
     img {
-        width: 100%;
-        height: auto;
+        width: 100%; /* Produce advertencia por redefinición de ancho*/
     }
 
     /*001*/
@@ -71,9 +70,7 @@ body main>div {
 
     /*002*/
     body main>div {
-        margin-top: 1em;
-        width: 100%;
-        height: 20rem;
+        width: 100%; /* Produce advertencia por redefinición de ancho*/
     }
 
 }

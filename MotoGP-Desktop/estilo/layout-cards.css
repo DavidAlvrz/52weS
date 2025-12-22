@@ -1,29 +1,29 @@
-/* Especificidad 001*/
+/* Especificidad 001 */
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1em;
 }
 
-/* Especificidad 002*/
+/* Especificidad 002 */
 main h2,
 main p {
-    grid-column: span 4;
+    grid-column-start: 1;
+    grid-column-end: span 4;
     text-align: center;
 }
 
-
 @media (min-width: 320px) and (max-width: 799px) {
 
-    /* Especificidad 001*/
+    /* Especificidad 001 */
     main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Produce advertencia por redefinición */
     }
 
     /* Ajuste: el h2 sólo debe abarcar 2 columnas en este rango */
+    /* Especificidad 002 */
     main h2 {
-        grid-column: span 2;
+        grid-column-end: span 2; /* Produce advertencia por redefinición */
     }
 
 }

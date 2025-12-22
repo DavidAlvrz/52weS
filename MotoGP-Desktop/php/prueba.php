@@ -90,13 +90,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $comentarios_usuario = $conn->real_escape_string($_POST['comentarios_usuario'] ?? '');
         $propuestas_mejora = $conn->real_escape_string($_POST['propuestas_mejora'] ?? '');
         $valoracion = intval($_POST['valoracion'] ?? 0);
+        $dispositivo = $conn->real_escape_string($_POST['dispositivo'] ?? 'Ordenador');
 
         $campos = implode(',', array_map(fn($n) => "pregunta_$n", range(1,10)));
         $valores = implode(',', array_map(fn($v) => "'$v'", $preguntas));
 
-        // Insertar resultado con comentarios, propuestas y valoración
+        // Insertar resultado con comentarios, propuestas, valoración y dispositivo
         $conn->query("INSERT INTO resultado (id_usuario, dispositivo, tiempo_segundos, completado, $campos, comentarios_usuario, propuestas_mejora, valoracion)
-                      VALUES ($id_usuario, 'Ordenador', $tiempo_segundos, 1, $valores, '$comentarios_usuario', '$propuestas_mejora', $valoracion)");
+                      VALUES ($id_usuario, '$dispositivo', $tiempo_segundos, 1, $valores, '$comentarios_usuario', '$propuestas_mejora', $valoracion)");
         $id_resultado = $conn->insert_id;
         $_SESSION['id_resultado'] = $id_resultado;
 
@@ -170,6 +171,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <textarea id="propuestas_mejora" name="propuestas_mejora" rows="3"></textarea><br><br>
         <label for="valoracion">Valoración del usuario (0-10):</label><br>
         <input type="number" id="valoracion" name="valoracion" min="0" max="10" required><br><br>
+        <label for="dispositivo">Dispositivo desde el que se realiza la prueba:</label><br>
+        <select id="dispositivo" name="dispositivo" required>
+            <option value="Ordenador">Ordenador</option>
+            <option value="Tableta">Tableta</option>
+            <option value="Teléfono">Teléfono</option>
+        </select><br><br>
         <button type="submit" name="enviar_respuestas">Enviar respuestas</button>
     </form>
 <?php elseif ($fase === 'observador'): ?>

@@ -45,45 +45,53 @@ class Configuracion {
         $this->ejecutarScript("drop.sql");
     }
 
-    public function exportarCSV(): void {
-        $this->conn->select_db($this->bd);
+public function exportarCSV(): void {
+    $this->conn->select_db($this->bd);
 
-        header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename="UO288705_DB.csv"');
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename="UO288705_DB.csv"');
 
-        $output = fopen('php://output', 'w');
+    $output = fopen('php://output', 'w');
 
-        $tablas = ["usuario", "resultado", "observacion"];
+    // Cabecera de la CSV combinada
+    $cabecera = [
+        // Campos usuario
+        'id_usuario','profesion','edad','genero','pericia_informatica',
+        // Campos resultado
+        'id_resultado','dispositivo','tiempo_segundos','completado',
+        'comentarios_usuario','propuestas_mejora','valoracion',
+        'pregunta_1','pregunta_2','pregunta_3','pregunta_4','pregunta_5',
+        'pregunta_6','pregunta_7','pregunta_8','pregunta_9','pregunta_10',
+        // Campos observacion
+        'id_observacion','comentarios_facilitador'
+    ];
+    fputcsv($output, $cabecera);
 
-        foreach ($tablas as $tabla) {
-            fputcsv($output, ["Tabla: $tabla"]);
+    // Consulta con JOIN
+    $sql = "
+        SELECT u.id_usuario, u.profesion, u.edad, u.genero, u.pericia_informatica,
+                r.id_resultado, r.dispositivo, r.tiempo_segundos, r.completado,
+                r.comentarios_usuario, r.propuestas_mejora, r.valoracion,
+                r.pregunta_1, r.pregunta_2, r.pregunta_3, r.pregunta_4, r.pregunta_5,
+                r.pregunta_6, r.pregunta_7, r.pregunta_8, r.pregunta_9, r.pregunta_10,
+                o.id_observacion, o.comentarios_facilitador
+        FROM usuario u
+        LEFT JOIN resultado r ON u.id_usuario = r.id_usuario
+        LEFT JOIN observacion o ON r.id_resultado = o.id_resultado
+        ORDER BY u.id_usuario, r.id_resultado, o.id_observacion
+    ";
 
-            $resultado = $this->conn->query("SELECT * FROM $tabla");
-
-            if ($resultado && $resultado->num_rows > 0) {
-                // Cabeceras
-                $campos = $resultado->fetch_fields();
-                $cabecera = [];
-
-                foreach ($campos as $campo) {
-                    $cabecera[] = $campo->name;
-                }
-                fputcsv($output, $cabecera);
-
-                // Datos
-                while ($fila = $resultado->fetch_assoc()) {
-                    fputcsv($output, $fila);
-                }
-            } else {
-                fputcsv($output, ["(Sin datos)"]);
-            }
-
-            fputcsv($output, []); // Línea en blanco entre tablas
+    $resultado = $this->conn->query($sql);
+    if ($resultado && $resultado->num_rows > 0) {
+        while ($fila = $resultado->fetch_assoc()) {
+            fputcsv($output, $fila);
         }
-
-        fclose($output);
-        exit;
     }
+
+    fclose($output);
+    exit;
+}
+
 }
 
 $configuracion = new Configuracion();

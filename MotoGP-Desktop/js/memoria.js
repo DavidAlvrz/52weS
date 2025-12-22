@@ -81,7 +81,7 @@ class Memoria {
             this.primera_carta.dataset.estado = "";
             this.segunda_carta.dataset.estado = "";
             this.reiniciarAtributos();
-        }, 1500);
+        }, 750);
     }
 
     comprobarPareja() {
